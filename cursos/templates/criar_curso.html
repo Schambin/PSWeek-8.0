@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    
+    
+    <h1> Criando curso</h1>
+    
+    {% if status == '1' %}
+    <hr>
+    <h2>Dados salvos com sucesso</h2>
+    <hr>
+    {% endif %}
+    
+        <form action="/curso/criar_curso/" method="POST">{% csrf_token %} <!-- comando django para evitar falsificação-->
+            <label for="">Nome do Curso:</label>
+            <input type="text" class="form-control" name="nome">
+    
+            <label for="">Carga Horária</label>
+            <input type="number" class="form-control" name="carga_horaria">
+    
+            <input type="submit" value="Enviar">
+            <hr>
+            <a href="listar_cursos.html">Lista de cursos</a>
+        </form>
+</div>
+</body>
+</html>

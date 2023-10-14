@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h4>Nome: {{curso.nome}}</h4>
+        <h5>Data de Criação: {{curso.data_criacao}}</h5>
+        <h5>Carga horaria: {{curso.carga_horaria}}</h5>
+        <h5>Nome: {{curso.nome}}</h5>
+        
+        <a href="{% url 'deletar_curso' curso.id %}" class="button">Excluir</a>
+        <a href="criar_curso.html">Criar curso</a>
+        <a href="listar_cursos.html">Retornar para cursos</a>
+
+    </div>
+</body>
+</html>

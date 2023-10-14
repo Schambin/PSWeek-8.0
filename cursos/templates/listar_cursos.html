@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><div class="container">
+    
+        <h1>Lista de Cursos</h1>
+    
+        <form action="{% url 'listar_cursos'%}">
+            <label for="">Nome</label>
+            <input type="text" name="nome_filtrar" class="form-control">
+            <br>
+
+            <label for="">Carga Horaria Minima</label>
+            <input type="number" name="carga_horaria" class="form-control">
+            <br>
+
+            <input type="submit" value="filtrar">
+        </form>
+
+        {% for i in cursos %}
+            {% if i.ativo %}
+            <h4>Nome: <a href="/curso/ver_curso/{{i.id}}">{{i.nome}}</h4></a>
+            <h4>Carga Horaria: {{i.carga_horaria}}</h4>
+            <h4>Data de Crianção: {{i.data_criacao}}</h4>
+            <h4>Ativo ? {{i.ativo}}</h4>
+            <hr>
+            {% endif %}
+        {% endfor %}
+        <a href="criar_curso.html">Criar curso</a>
+</div>
+</body>
+</html>
